@@ -10,7 +10,7 @@ public class Car {
     @Override
     public String toString() {
         return "Автомобиль " + brand + " " + model + ", " + year +
-                " год выауска, страна сборки - " + country +
+                " год выауска, страна сборки " + country +
                 ", цвет " + color + ", объем двигателя " + engineVolume + " л";
     }
 }
