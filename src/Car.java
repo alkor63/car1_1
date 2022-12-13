@@ -1,10 +1,10 @@
 public class Car {
-    String brand;
-    String model;
-    int year;
-    String country;
-    String color;
-    double engineVolume;
+    public String brand;
+    public String model;
+    public int year;
+    public String country;
+    public String color;
+    public double engineVolume;
 
     public Car(String brand, String model, int year, String country, String color, double engineVolume) {
 
@@ -22,7 +22,7 @@ public class Car {
         this.engineVolume = engineVolume;
     }
     public boolean nullString(String s){
-        return (s == null || s.equals(""));
+        return (s == null || s.isEmpty());
     }
     @Override
     public String toString() {
