@@ -46,7 +46,7 @@ public class Car {
     public String toString() {
         return "Автомобиль " + brand + " " + model + ", " + year +
                 " год выауска, страна сборки " + country +
-                ", цвет " + color + ", объем двигателя " + engineVolume + " л\n\t\t" +
+                ", цвет " + color + ", объем двигателя " + engineVolume + " л\n\t\t\t" +
                 "КП - "+transmission+", "+numberOfSeats+"-местный "+bodyType+" рег.номер "+regNumber;
 
     }
