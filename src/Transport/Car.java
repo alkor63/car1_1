@@ -1,5 +1,7 @@
 package Transport;
 
+import java.time.LocalDate;
+
 public class Car {
     private final String brand;
     private final String model;
@@ -13,6 +15,45 @@ public class Car {
     private String regNumber;
     private final int numberOfSeats;
     private boolean summerTires;
+
+    public static class Insurance{
+        private  LocalDate validityPeriod;
+        private double costIns;
+        private String numIns;
+//        LocalDate getYear()
+//      int getDayOfYear()
+
+        public Insurance(LocalDate validityPeriod, double costIns, String numIns) {
+            int numYear = LocalDate.now().getYear();
+            System.out.println("Номер текущего года = "+numYear);
+          int numYear2 = validityPeriod.getYear();
+           System.out.println("Номер года страховки = "+numYear2);
+//            if ( <= LocalDate.now()) System.out.println("Ваша страховка просрочена!!!");
+            this.validityPeriod = validityPeriod;
+            if (costIns < 0) costIns = -1 * costIns;
+            this.costIns = costIns;
+            if (nullString(numIns)) numIns = "номпен полиса не указан";
+            this.numIns = numIns;
+        }
+    }
+    public static class Key {
+        private boolean remoteEngineStart;
+        private boolean keylessAccess;
+
+        public Key(boolean remoteEngineStart, boolean keylessAccess) {
+                this.remoteEngineStart = remoteEngineStart;
+            this.keylessAccess = keylessAccess;
+        }
+// геттеры для boolean выглядят так:
+        public boolean isRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public boolean isKeylessAccess() {
+            return keylessAccess;
+        }
+
+    }
 
     public Car(String brand, String model, int year, String country, String color, double engineVolume,
                String transmission, String bodyType, String regNumber, int numberOfSeats) {
@@ -39,15 +80,17 @@ public class Car {
         this.numberOfSeats = numberOfSeats;
 
     }
-    public boolean nullString(String s){
+
+    public static boolean nullString(String s) {
         return (s == null || s.isEmpty());
     }
+
     @Override
     public String toString() {
         return "Автомобиль " + brand + " " + model + ", " + year +
                 " год выауска, страна сборки " + country +
                 ", цвет " + color + ", объем двигателя " + engineVolume + " л\n\t\t\t" +
-                "КП - "+transmission+", "+numberOfSeats+"-местный "+bodyType+" рег.номер "+regNumber;
+                "КП - " + transmission + ", " + numberOfSeats + "-местный " + bodyType + " рег.номер " + regNumber;
 
     }
 

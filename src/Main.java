@@ -1,5 +1,6 @@
 
 import Transport.Car;
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,5 +14,10 @@ public class Main {
 
         for (Car car: cars)
             System.out.println(car);
+
+// вводим данные страхового полиса
+        LocalDate polisDate = LocalDate.of(2021, 12, 28);
+        new Car.Insurance(polisDate, 5678.5, "78GFR876TFC");
+        System.out.println(LocalDate.now());
     }
 }
