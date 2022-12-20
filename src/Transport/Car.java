@@ -20,8 +20,8 @@ public class Car {
 
     public static class Insurance {
         private LocalDate validityPeriod;
-        private double costIns;
-        private String numIns;
+        private final double costIns;
+        private final String numIns;
 
         public Insurance(LocalDate validityPeriod, double costIns, String numIns) {
             if (CarTools.insDateOK(validityPeriod)) this.validityPeriod = validityPeriod;
@@ -29,6 +29,18 @@ public class Car {
             this.costIns = costIns;
             if (nullString(numIns)) numIns = "номпен полиса не указан";
             this.numIns = numIns;
+        }
+
+        public LocalDate getValidityPeriod() {
+            return validityPeriod;
+        }
+
+        public double getCostIns() {
+            return costIns;
+        }
+
+        public String getNumIns() {
+            return numIns;
         }
     }
 
@@ -154,4 +166,5 @@ public class Car {
     public void setSummerTires(boolean summerTires) {
         this.summerTires = summerTires;
     }
+
 }

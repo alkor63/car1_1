@@ -1,5 +1,7 @@
 
 import Transport.Car;
+import Transport.CarTools;
+
 import java.time.LocalDate;
 
 public class Main {
@@ -15,14 +17,16 @@ public class Main {
         cars[3] = new Car("Kia","Sportage 4-го поколения",2018,"Южная Корея","красный",
                 2.4,"auto","sedan","a234bb123", 5);
         cars[4] = new Car("","Avante",-2016,"Южная Корея",null,-1.6,
-                "auto","sedan","a584bb178", 5);
+               "auto","sedan","a584bb178", 5);
+
 
         for (Car car: cars)
             System.out.println(car);
 
 // вводим данные страхового полиса
         LocalDate polisDate = LocalDate.of(2022, 11, 28);
-        new Car.Insurance(polisDate, 5678.5, "78GFR876TFC");
+        Car.Insurance carIns = new Car.Insurance(polisDate, 5678.5, "78GFR876TFC");
+        CarTools.checkInsNumber(carIns.getNumIns());
         System.out.println("Текущая дата : "+LocalDate.now());
     }
 }

@@ -15,4 +15,9 @@ public class CarTools {
             return false;
         } else return true;
     }
+
+    public static void checkInsNumber(String numIns){
+        if (numIns.length() != 9)
+            System.out.println(" !!! "+numIns+" - некорректный номер страховки (должно быть 9 знаков) !!!");
+    }
 }
