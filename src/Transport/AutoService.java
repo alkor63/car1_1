@@ -2,7 +2,7 @@ package Transport;
 
 import java.time.LocalDate;
 
-public class CarTools {
+public class AutoService {
 
     public static boolean insDateOK(LocalDate insDate) {
         int numYearNow = LocalDate.now().getYear();

@@ -1,6 +1,6 @@
 
 import Transport.Car;
-import Transport.CarTools;
+import Transport.AutoService;
 
 import java.time.LocalDate;
 
@@ -26,7 +26,7 @@ public class Main {
 // вводим данные страхового полиса
         LocalDate polisDate = LocalDate.of(2022, 11, 28);
         Car.Insurance carIns = new Car.Insurance(polisDate, 5678.5, "78GFR876TFC");
-        CarTools.checkInsNumber(carIns.getNumIns());
+        AutoService.checkInsNumber(carIns.getNumIns());
         System.out.println("Текущая дата : "+LocalDate.now());
     }
 }

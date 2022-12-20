@@ -24,7 +24,7 @@ public class Car {
         private final String numIns;
 
         public Insurance(LocalDate validityPeriod, double costIns, String numIns) {
-            if (CarTools.insDateOK(validityPeriod)) this.validityPeriod = validityPeriod;
+            if (AutoService.insDateOK(validityPeriod)) this.validityPeriod = validityPeriod;
             if (costIns < 0) costIns = -1 * costIns;
             this.costIns = costIns;
             if (nullString(numIns)) numIns = "номпен полиса не указан";
